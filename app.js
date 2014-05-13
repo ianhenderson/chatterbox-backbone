@@ -11,10 +11,10 @@ var sampleChats = [
     }
   ];
 
-
+// Model for each chat message
 var ChatMessage = Backbone.Model.extend({});
 
-
+// View for each individual message
 var ChatMessageView = Backbone.View.extend({
   render: function(){
     this.$el.html(this.model.get('text'));
@@ -22,10 +22,10 @@ var ChatMessageView = Backbone.View.extend({
   }
 });
 
-
+// Chat message collection
 var Chats = Backbone.Collection.extend({model: ChatMessage});
 
-
+// Container for chat messages
 var ChatsView = Backbone.View.extend({
 
   el: '#messages',
@@ -41,6 +41,8 @@ var ChatsView = Backbone.View.extend({
   }
 });
 
+// Initialize with an instants of the Chats collection, passing in the sample data
 var chats = new Chats(sampleChats);
 
+// Initialize the view for the chats container, specifying the collection to be associated with
 var chatsView = new ChatsView({collection: chats});
