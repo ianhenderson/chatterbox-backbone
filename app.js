@@ -30,8 +30,19 @@ var ChatsView = Backbone.View.extend({
 
   el: '#messages',
 
+  events: {
+    // 'submit input':this.addText
+  },
+
   initialize: function(){
     this.render();
+  },
+
+  addText: function(e){
+    // e && e.preventDefault();
+    // var message = $('#input').val();
+    // this.collection.add({text: message});
+    // this.render();
   },
 
   render: function(){
@@ -40,6 +51,7 @@ var ChatsView = Backbone.View.extend({
     }));
   }
 });
+
 
 // Initialize with an instants of the Chats collection, passing in the sample data
 var chats = new Chats(sampleChats);
